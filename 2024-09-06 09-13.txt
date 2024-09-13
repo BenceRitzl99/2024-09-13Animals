@@ -1,0 +1,44 @@
+npm install -g @angular/cli  --> angular telepítése 18.2.3
+node.js -> 20.17.0
+
+ng n(n=new) Fájl neve --standalone=false --> module fájl  ->  CSS/no
+
+cd Fájl neve -> belépés a mappába
+
+
+ng serve -o --> megnyitja az oldalt
+
+ng add @ng-bootstrap/ng-bootstrap --> bootstrap telepítés
+
+ng g s base  --> service létrehozása
+
+ng g c data --> komponens létrehozása
+
+
+
+
+App.module.ts
+
+FormsModule
+
+providers: [
+    provideHttpClient()
+  ],
+
+
+base.service.ts
+
+private http: HttpClient
+
+
+
+API:
+
+npm init -y
+npm i json-server
+"start": json-server --watch db.json
+npm start
+db.json :{
+	"todo":[
+   ]
+}
