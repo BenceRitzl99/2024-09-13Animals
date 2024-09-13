@@ -1,0 +1,8 @@
+{
+    "columns":[
+        {"key":"id", "text":"Id", "type":"plain"},
+        {"key":"userId","text":"User Id", "type":"number"},
+        {"key":"title","text":"Title", "type":"text"},
+        {"key":"completed","text":"Completed", "type":"boolean"}
+    ]
+}

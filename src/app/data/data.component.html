@@ -1,0 +1,74 @@
+<!-- <p>data works!</p>
+{{oszlopok|json}}
+{{todo|json}} -->
+{{oszlopok|json}}
+
+<!-- Fejléc kiiratása -->
+<div class="row  fw-bold my-4">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        {{oszlop.text}}
+    </div>
+    <div class="col">
+        Műveletek
+    </div>
+</div>
+
+
+<div  class="row my-1">
+   
+        <div *ngFor="let oszlop of oszlopok" class="col">
+            <ng-container [ngSwitch]="oszlop.type">
+                <div *ngSwitchCase="'plain'" class="mt-1">
+                    {{newTodo[oszlop.key]}}
+                </div>
+                <div *ngSwitchCase="'boolean'" class="form-check form-switch">
+                    <input
+                    [(ngModel)]="newTodo[oszlop.key]"
+                    class="form-check-input" 
+                    role="switch"
+                    type="checkbox"> 
+                  </div>
+               
+                  <input *ngSwitchDefault="" 
+                  [(ngModel)]="newTodo[oszlop.key]"
+                  [type]="oszlop.type" class="form-control">
+
+            </ng-container>
+        </div>
+        <div class="col">
+            <button (click)="hozzaad()" type="button" class="btn btn-primary btn-sm">Hozzáad</button>
+           
+        </div>
+   
+</div>
+
+
+<div *ngFor="let todo of todos" class="row my-1">
+   
+        <div *ngFor="let oszlop of oszlopok" class="col">
+            <ng-container [ngSwitch]="oszlop.type">
+                <div *ngSwitchCase="'plain'" class="mt-1">
+                    {{todo[oszlop.key]}}
+                </div>
+                <div *ngSwitchCase="'boolean'" class="form-check form-switch">
+                    <input
+                    [(ngModel)]="todo[oszlop.key]"
+                    class="form-check-input" 
+                    role="switch"
+                    type="checkbox"> 
+                  </div>
+               
+                  <input *ngSwitchDefault="" 
+                  [(ngModel)]="todo[oszlop.key]"
+                  [type]="oszlop.type" class="form-control">
+
+            </ng-container>
+        </div>
+        <div class="col">
+            <button (click)="ment(todo)" type="button" class="btn btn-primary btn-sm">Ment</button>
+            <button (click)="torol(todo)" type="button" class="btn btn-secondary btn-sm ms-2">Töröl</button>
+        </div>
+   
+</div>
+
+

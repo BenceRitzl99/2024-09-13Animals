@@ -1,0 +1,8 @@
+{
+    "columns":[
+        {"key":"id", "text":"Azonosító", "type":"plain"},
+        {"key":"userId","text":"Felhasználó azonosító", "type":"number"},
+        {"key":"title","text":"Cimke", "type":"text"},
+        {"key":"completed","text":"Teljesítve", "type":"boolean"}
+    ]
+}
